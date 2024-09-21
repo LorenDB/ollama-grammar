@@ -247,6 +247,7 @@ func (s *Server) GenerateHandler(c *gin.Context) {
 			Prompt:  prompt,
 			Images:  images,
 			Format:  req.Format,
+			Grammar: req.Grammar,
 			Options: opts,
 		}, func(cr llm.CompletionResponse) {
 			res := api.GenerateResponse{
@@ -1423,6 +1424,7 @@ func (s *Server) ChatHandler(c *gin.Context) {
 			Prompt:  prompt,
 			Images:  images,
 			Format:  req.Format,
+			Grammar: req.Grammar,
 			Options: opts,
 		}, func(r llm.CompletionResponse) {
 			res := api.ChatResponse{
